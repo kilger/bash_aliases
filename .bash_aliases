@@ -11,7 +11,7 @@
 #--end--
 
 # git install bash_aliases
-# $ wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/tmux.conf/master/.bash_aliases
+# $ wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/bash_aliases/main/.bash_aliases
 
 alias ..="cd .."
 alias ...="cd ../.."
