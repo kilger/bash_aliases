@@ -42,4 +42,10 @@ alias tn='tmux new -s '
 
 #alias update='sudo -- sh -c "/root/bin/chk_disk && dnf update'
 
+#restore tmux session even after reboot
+alias mux='pgrep -vx tmux > /dev/null && \
+		tmux new -d -s delete-me && \
+		tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && \
+		tmux kill-session -t delete-me && \
+		tmux attach || tmux attach'
 
