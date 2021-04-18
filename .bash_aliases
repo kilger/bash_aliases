@@ -37,8 +37,10 @@ alias srestart="sudo systemctl restart"
 
 # tmux
 alias t='tmux'
-alias ta='tmux attach -t '
+alias ta='tmux attach-session -t '
+alias tk='tmux kill-session -t '
 alias tn='tmux new -s '
+alias tl='tmux list-session'
 
 #alias update='sudo -- sh -c "/root/bin/chk_disk && dnf update'
 
@@ -49,3 +51,5 @@ alias mux='pgrep -vx tmux > /dev/null && \
 		tmux kill-session -t delete-me && \
 		tmux attach || tmux attach'
 
+# debian update system
+alias dup='sudo apt clean && apt-get update && apt-get upgrade && apt-get dist-upgrade'
