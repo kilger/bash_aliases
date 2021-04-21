@@ -53,3 +53,6 @@ alias mux='pgrep -vx tmux > /dev/null && \
 
 # debian update system
 alias dup='sudo apt clean && apt-get update && apt-get upgrade && apt-get dist-upgrade'
+
+#toggle between the last two directories
+alias -=”cd -”
