@@ -1,6 +1,6 @@
 # reload bashrc after changes
 #$ source .bash_aliases #better
-alias rbash=source ~/.bash_aliases
+alias rbash="source ~/.bashrc"
 #or
 #$ source ~/.bashrc
 # $ source ~/.bash_aliases
@@ -14,7 +14,7 @@ alias rbash=source ~/.bash_aliases
 # git install bash_aliases
 # wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/bash_aliases/main/.bash_aliases
 
-alias sai=apt install -y
+alias sai="sudo apt install -y"
 
 alias ..="cd .."
 alias ...="cd ../.."
