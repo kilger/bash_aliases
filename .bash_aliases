@@ -1,5 +1,6 @@
 # reload bashrc after changes
 #$ source .bash_aliases #better
+alias rbash=source ~/.bash_aliases
 #or
 #$ source ~/.bashrc
 # $ source ~/.bash_aliases
@@ -11,7 +12,9 @@
 #--end--
 
 # git install bash_aliases
-# $ wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/bash_aliases/main/.bash_aliases
+# wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/bash_aliases/main/.bash_aliases
+
+alias sai=apt install -y
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -55,4 +58,4 @@ alias mux='pgrep -vx tmux > /dev/null && \
 alias dup='sudo apt clean && apt-get update && apt-get upgrade && apt-get dist-upgrade'
 
 #toggle between the last two directories
-alias -=”cd -”
+alias -="cd -"
