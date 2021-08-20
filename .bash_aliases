@@ -28,7 +28,7 @@ alias gitc="git commit -m"
 alias gitp="git push"
 alias gits="git status"
 
-alias la="ls -la"
+alias laa="ls -la"
 alias lll="ls -all | less"
 alias lt="ls --tree"
 
@@ -56,6 +56,9 @@ alias mux='pgrep -vx tmux > /dev/null && \
 
 # debian update system
 alias dup='sudo apt clean && apt-get update && apt-get upgrade && apt-get dist-upgrade'
+
+#check ports open
+alias whatisopen?="sudo lsof -i && sudo nmap -p- -sU -sS --open 127.0.0.1"
 
 #toggle between the last two directories
 alias -="cd -"
