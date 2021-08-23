@@ -14,7 +14,7 @@
 # git install bash_aliases
 # wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/bash_aliases/main/.bash_aliases
 alias updatealias="wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/bash_aliases/main/.bash_aliases"
-alias rass="source ~/.bashrc"
+#alias rass="source ~/.bashrc" in .bashrc
 
 #install, just add package ie $sai ufw
 alias sai="sudo apt install -y"
@@ -25,6 +25,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+#git
 alias g=git
 alias gita="git add -A ."
 alias gitc="git commit -m"
@@ -38,8 +39,12 @@ alias lt="ls --tree"
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
+#python virtual environments ansible
+alias vansible4="source ansible4.0/bin/activate"
+
 alias sstatus="sudo systemctl status -l"
 alias srestart="sudo systemctl restart"
+
 
 # tmux
 alias t="tmux"
@@ -48,7 +53,7 @@ alias tk="tmux kill-session -t "
 alias tn="tmux new -s "
 alias tl="tmux list-session"
 
-alias update="sudo -- sh -c '/root/bin/chk_disk && dnf update'"
+
 
 #restore tmux session even after reboot
 alias mux="pgrep -vx tmux > /dev/null && \
@@ -57,11 +62,17 @@ alias mux="pgrep -vx tmux > /dev/null && \
 		tmux kill-session -t delete-me && \
 		tmux attach || tmux attach"
 
+
 # debian update system
 alias dup="sudo apt clean && apt-get update && apt-get upgrade && apt-get dist-upgrade"
+alias update="sudo -- sh -c '/root/bin/chk_disk && dnf update'"
 
 #check ports open
 alias whatisopen="sudo lsof -i && sudo nmap -p- -sU -sS --open 127.0.0.1"
 
 #toggle between the last two directories
-alias -="cd -"
+#alias -="cd -"
+
+#weather
+alias weather="curl wttr.in/"
+#weather toronto
