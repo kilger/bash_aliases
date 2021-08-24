@@ -116,3 +116,43 @@ smbservehere() {
     [[ -z $1 ]] && sharename="SHARE" || sharename=$1
     docker run --rm -it -p 445:445 -v "${PWD}:/tmp/serve" rflathers/impacket smbserver.py -smb2support $sharename /tmp/serve
 }
+
+nginxhere() {
+    docker run --rm -it -p 80:80 -p 443:443 -v "${PWD}:/srv/data" rflathers/nginxserve
+}
+
+webdavhere() {
+    docker run --rm -it -p 80:80 -v "${PWD}:/srv/data/share" rflathers/webdav
+}
+
+metasploit() {
+    docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" metasploitframework/metasploit-framework ./msfconsole "$@"
+}
+
+metasploitports() {
+    docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -p 8443-8500:8443-8500 metasploitframework/metasploit-framework ./msfconsole "$@"
+}
+
+msfvenomhere() {
+    docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -v "${PWD}:/data" metasploitframework/metasploit-framework ./msfvenom "$@"
+}
+
+reqdump() {
+    docker run --rm -it -p 80:3000 rflathers/reqdump
+}
+
+postfiledumphere() {
+    docker run --rm -it -p80:3000 -v "${PWD}:/data" rflathers/postfiledump
+}
+
+function msfvenom() {
+    local entrydir="/usr/src/metasploit-framework"
+    local image="metasploitframework/metasploit-framework:latest"
+    local name="msfvenom_$(head -c 8 /dev/random | xxd -p)"
+
+    mkdir -p "$HOME/.msf4"
+    docker run -e MSF_GID=$(id -g) -e MSF_UID=$(id -u) \
+        --entrypoint "$entrydir/docker/entrypoint.sh" -i \
+        --name "$name" --rm -tv "$HOME/.msf4":/home/msf/.msf4 \
+        -v "$(pwd)":/msf:Z -w /msf $image "$entrydir/msfvenom" "$@"
+}
