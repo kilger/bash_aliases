@@ -53,8 +53,6 @@ alias tk="tmux kill-session -t "
 alias tn="tmux new -s "
 alias tl="tmux list-session"
 
-
-
 #restore tmux session even after reboot
 alias mux="pgrep -vx tmux > /dev/null && \
 		tmux new -d -s delete-me && \
