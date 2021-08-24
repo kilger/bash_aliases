@@ -83,3 +83,36 @@ alias whatisopen="sudo lsof -i && sudo nmap -p- -sU -sS --open 127.0.0.1"
 #weather
 alias weather="curl wttr.in/"
 #weather toronto
+
+#Functions:
+function dockershell() {
+    docker run --rm -i -t --entrypoint=/bin/bash "$@"
+}
+
+function dockershellsh() {
+    docker run --rm -i -t --entrypoint=/bin/sh "$@"
+}
+
+function dockershellhere() {
+    dirname=${PWD##*/}
+    docker run --rm -it --entrypoint=/bin/bash -v `pwd`:/${dirname} -w /${dirname} "$@"
+}
+
+function dockershellshhere() {
+    docker run --rm -it --entrypoint=/bin/sh -v `pwd`:/${dirname} -w /${dirname} "$@"
+}
+
+function dockerwindowshellhere() {
+    dirname=${PWD##*/}
+    docker -c 2019-box run --rm -it -v "C:${PWD}:C:/source" -w "C:/source" "$@"
+}
+
+impacket() {
+    docker run --rm -it rflathers/impacket "$@"
+}
+
+smbservehere() {
+    local sharename
+    [[ -z $1 ]] && sharename="SHARE" || sharename=$1
+    docker run --rm -it -p 445:445 -v "${PWD}:/tmp/serve" rflathers/impacket smbserver.py -smb2support $sharename /tmp/serve
+}
