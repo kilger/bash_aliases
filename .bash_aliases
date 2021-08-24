@@ -25,6 +25,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+#ansible
+alias Ap="ansible-playbook"
+
 #git
 alias g=git
 alias gita="git add -A ."
