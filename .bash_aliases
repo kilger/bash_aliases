@@ -126,7 +126,11 @@ alias curl="curl -A '$AGENT'"
 alias wget="wget -U '$AGENT'" 
 alias nmap="nmap --script-args=\"http.useragent='$AGENT' \""
 
+#find the files that has been added/modified most recently:
+alias lt=’ls -alrt’
 
+# file tree of current directory
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 #Functions:
 function dockershell() {
