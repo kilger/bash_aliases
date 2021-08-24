@@ -19,6 +19,10 @@ alias rass="source ~/.bashrc"
 #apt install, just add package ie $sai ufw
 alias sai="sudo apt install -y"
 
+# become root #
+alias root='sudo -i'
+alias su='sudo -i'
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -28,10 +32,19 @@ alias ......="cd ../../../../.."
 #ansible
 alias Ap="ansible-playbook"
 
+#progress bar on file copy. Useful evenlocal.
+alias cpProgress="rsync --progress -ravz"
+
 #docker
 alias dockershell="docker run --rm -i -t --entrypoint=/bin/bash"
 alias dockershellsh="docker run --rm -i -t --entrypoint=/bin/sh"
 alias impacket="docker run --rm -it rflathers/impacket"
+alias metasploit='docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" metasploitframework/metasploit-framework ./msfconsole'
+alias metasploitports='docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -p 8443-8500:8443-8500 metasploitframework/metasploit-framework ./msfconsole'
+alias msfvenomhere='docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -v "${PWD}:/data" metasploitframework/metasploit-framework ./msfvenom'
+alias postfiledumphere='docker run --rm -it -p80:3000 -v "${PWD}:/data" rflathers/postfiledump'
+alias reqdump='docker run --rm -it -p 80:3000 rflathers/reqdump'
+
 
 #git
 alias g=git
@@ -44,8 +57,27 @@ alias laa="ls -la"
 alias lll="ls -all | less"
 alias lt="ls --tree"
 
+#IP
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias network.connections='sudo lsof -l -i +L -R -V'
+alias network.established='sudo lsof -l -i +L -R -V | grep ESTABLISHED'
+alias network.externalip='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
+
+# display all rules #
+alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
+alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
+alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
+alias iptlistfw='sudo /sbin/iptables -L FORWORD -n -v --line-numbers'
+alias firewall=iptlist
+
+
+
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+#alias LetsHack=sudo systemctl start openvpn && sudo openvpn /thm/yourvpn-profile.ovpn
+#alias LetsHackthebox=sudo systemctl start openvpn && sudo openvpn /thm/yourvpn-profile.ovpn
+
 
 #python virtual environments ansible
 alias vansible4="source ansible4.0/bin/activate"
@@ -84,6 +116,18 @@ alias whatisopen="sudo lsof -i && sudo nmap -p- -sU -sS --open 127.0.0.1"
 alias weather="curl wttr.in/"
 #weather toronto
 
+#-c flag in order to continue the download in case of problems
+alias wget="wget -c"
+
+
+#Red Team 
+export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" 
+alias curl="curl -A '$AGENT'" 
+alias wget="wget -U '$AGENT'" 
+alias nmap="nmap --script-args=\"http.useragent='$AGENT' \""
+
+
+
 #Functions:
 function dockershell() {
     docker run --rm -i -t --entrypoint=/bin/bash "$@"
@@ -106,10 +150,10 @@ function dockerwindowshellhere() {
     dirname=${PWD##*/}
     docker -c 2019-box run --rm -it -v "C:${PWD}:C:/source" -w "C:/source" "$@"
 }
-
-impacket() {
-    docker run --rm -it rflathers/impacket "$@"
-}
+#getting error?
+#impacket() {
+#    docker run --rm -it rflathers/impacket "$@"
+#}
 
 smbservehere() {
     local sharename
@@ -155,4 +199,10 @@ function msfvenom() {
         --entrypoint "$entrydir/docker/entrypoint.sh" -i \
         --name "$name" --rm -tv "$HOME/.msf4":/home/msf/.msf4 \
         -v "$(pwd)":/msf:Z -w /msf $image "$entrydir/msfvenom" "$@"
+}
+
+#shown the contents of a directory immediately after moving to it by cd DIRECTORY 
+cdl()    {
+  cd"$@";
+  ls -al;
 }
