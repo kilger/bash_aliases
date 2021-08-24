@@ -28,6 +28,11 @@ alias ......="cd ../../../../.."
 #ansible
 alias Ap="ansible-playbook"
 
+#docker
+alias dockershell="docker run --rm -i -t --entrypoint=/bin/bash"
+alias dockershellsh="docker run --rm -i -t --entrypoint=/bin/sh"
+alias impacket="docker run --rm -it rflathers/impacket"
+
 #git
 alias g=git
 alias gita="git add -A ."
