@@ -173,9 +173,9 @@ webdavhere() {
     docker run --rm -it -p 80:80 -v "${PWD}:/srv/data/share" rflathers/webdav
 }
 
-metasploit() {
-    docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" metasploitframework/metasploit-framework ./msfconsole "$@"
-}
+#metasploit() {
+#    docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" metasploitframework/metasploit-framework ./msfconsole "$@"
+#}
 
 metasploitports() {
     docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -p 8443-8500:8443-8500 metasploitframework/metasploit-framework ./msfconsole "$@"
