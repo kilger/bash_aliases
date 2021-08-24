@@ -25,6 +25,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+#ansible
+alias Ap="ansible-playbook"
+
 #git
 alias g=git
 alias gita="git add -A ."
@@ -52,8 +55,6 @@ alias ta="tmux attach-session -t "
 alias tk="tmux kill-session -t "
 alias tn="tmux new -s "
 alias tl="tmux list-session"
-
-
 
 #restore tmux session even after reboot
 alias mux="pgrep -vx tmux > /dev/null && \
