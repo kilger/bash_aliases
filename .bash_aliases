@@ -118,7 +118,7 @@ alias weather="curl wttr.in/"
 
 #-c flag in order to continue the download in case of problems
 alias wget="wget -c"
-
+alias h=history
 
 #Red Team 
 export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" 
@@ -127,7 +127,7 @@ alias wget="wget -U '$AGENT'"
 alias nmap="nmap --script-args=\"http.useragent='$AGENT' \""
 
 #find the files that has been added/modified most recently:
-alias lt=’ls -alrt’
+alias lt="ls -alrt"
 
 # file tree of current directory
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
