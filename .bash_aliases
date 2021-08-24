@@ -112,6 +112,10 @@ alias whatisopen="sudo lsof -i && sudo nmap -p- -sU -sS --open 127.0.0.1"
 #toggle between the last two directories
 #alias -="cd -"
 
+#add date stamp to bash history
+export HISTTIMEFORMAT="%F %T
+
+
 #weather
 alias weather="curl wttr.in/"
 #weather toronto
