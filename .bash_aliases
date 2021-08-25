@@ -72,6 +72,8 @@ alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
 alias iptlistfw='sudo /sbin/iptables -L FORWORD -n -v --line-numbers'
 alias firewall=iptlist
 
+#Test internet speed
+alias netspeed="curl -L https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -o fast && wget https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -O fast"
 
 
 # Lock the screen (when going AFK)
