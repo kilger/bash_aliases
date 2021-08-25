@@ -81,7 +81,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 #python virtual environments ansible
 alias vansible4="source ansible4.0/bin/activate"
-alias vansible="cd ~/python-venv && source ansible4.0/bin/activate && cd ~/ansible"
+#alias vansible="cd ~/python-venv && source ansible4.0/bin/activate && cd ~/ansible"
+alias vansible="cd ~/python_virtualenv/vansible/vansible4.0/ && source bin/activate && cd ~/ansible"
+
 
 alias sstatus="sudo systemctl status -l"
 alias srestart="sudo systemctl restart"
