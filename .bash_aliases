@@ -36,14 +36,16 @@ alias Ap="ansible-playbook"
 alias cpProgress="rsync --progress -ravz"
 
 #docker
+alias testdocker="docker run hello-world"
 alias dockershell="docker run --rm -i -t --entrypoint=/bin/bash"
 alias dockershellsh="docker run --rm -i -t --entrypoint=/bin/sh"
 alias impacket="docker run --rm -it rflathers/impacket"
-alias metasploit='docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" metasploitframework/metasploit-framework ./msfconsole'
-alias metasploitports='docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -p 8443-8500:8443-8500 metasploitframework/metasploit-framework ./msfconsole'
-alias msfvenomhere='docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -v "${PWD}:/data" metasploitframework/metasploit-framework ./msfvenom'
-alias postfiledumphere='docker run --rm -it -p80:3000 -v "${PWD}:/data" rflathers/postfiledump'
-alias reqdump='docker run --rm -it -p 80:3000 rflathers/reqdump'
+alias metasploit="docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" metasploitframework/metasploit-framework ./msfconsole"
+alias metasploitports="docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -p 8443-8500:8443-8500 metasploitframework/metasploit-framework ./msfconsole"
+alias msfvenomhere="docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -v "${PWD}:/data" metasploitframework/metasploit-framework ./msfvenom"
+alias postfiledumphere="docker run --rm -it -p80:3000 -v "${PWD}:/data" rflathers/postfiledump"
+alias reqdump="docker run --rm -it -p 80:3000 rflathers/reqdump"
+alias pwncat="docker build -t pwncat ."
 
 
 #git
