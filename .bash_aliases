@@ -125,7 +125,7 @@ alias whatisopen="sudo lsof -i && sudo nmap -p- -sU -sS --open 127.0.0.1"
 #alias -="cd -"
 
 #add date stamp to bash history
-export HISTTIMEFORMAT="%F %T
+export HISTTIMEFORMAT="%F %T"
 
 
 #weather
