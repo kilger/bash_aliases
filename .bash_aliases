@@ -48,7 +48,11 @@ alias reqdump="docker run --rm -it -p 80:3000 rflathers/reqdump"
 alias pwncat="docker build -t pwncat ."
 #docker pull resilio/sync
 alias sync="docker run -d --name Sync -p 127.0.0.1:$WEBUI_PORT:8888 -p 55555 -v $DATA_FOLDER:/mnt/sync --restart on-failure resilio/sync"
-
+alias Di"docker images"
+alias Dl="docker login" 
+alias Dps="docker ps" 
+alias Ds="docker start"
+alias Dv="docker --version"
 
 #git
 alias g=git
