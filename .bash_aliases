@@ -48,9 +48,9 @@ alias reqdump="docker run --rm -it -p 80:3000 rflathers/reqdump"
 alias pwncat="docker build -t pwncat ."
 #docker pull resilio/sync
 alias sync="docker run -d --name Sync -p 127.0.0.1:$WEBUI_PORT:8888 -p 55555 -v $DATA_FOLDER:/mnt/sync --restart on-failure resilio/sync"
-alias Di"docker images"
-alias Dl="docker login" 
-alias Dps="docker ps" 
+alias Di="docker images"
+alias Dl="docker login"
+alias Dps="docker ps"
 alias Ds="docker start"
 alias Dv="docker --version"
 
@@ -108,10 +108,10 @@ alias tl="tmux list-session"
 
 #restore tmux session even after reboot
 alias mux="pgrep -vx tmux > /dev/null && \
-		tmux new -d -s delete-me && \
-		tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && \
-		tmux kill-session -t delete-me && \
-		tmux attach || tmux attach"
+                tmux new -d -s delete-me && \
+                tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh && \
+                tmux kill-session -t delete-me && \
+                tmux attach || tmux attach"
 
 
 # debian update system
@@ -127,7 +127,6 @@ alias whatisopen="sudo lsof -i && sudo nmap -p- -sU -sS --open 127.0.0.1"
 #add date stamp to bash history
 export HISTTIMEFORMAT="%F %T"
 
-
 #weather
 alias weather="curl wttr.in/"
 #weather toronto
@@ -136,10 +135,10 @@ alias weather="curl wttr.in/"
 alias wget="wget -c"
 alias h=history
 
-#Red Team 
-export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" 
-alias curl="curl -A '$AGENT'" 
-alias wget="wget -U '$AGENT'" 
+#Red Team
+export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
+alias curl="curl -A '$AGENT'"
+alias wget="wget -U '$AGENT'"
 alias nmap="nmap --script-args=\"http.useragent='$AGENT' \""
 
 #find the files that has been added/modified most recently:
@@ -149,6 +148,13 @@ alias lt="ls -alrt"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 #Functions:
+#shown the contents of a directory immediately after moving to it by cd DIRECTORY
+cdl()    {
+  cd"$@";
+  ls -al;
+}
+
+
 function dockershell() {
     docker run --rm -i -t --entrypoint=/bin/bash "$@"
 }
@@ -170,7 +176,7 @@ function dockerwindowshellhere() {
     dirname=${PWD##*/}
     docker -c 2019-box run --rm -it -v "C:${PWD}:C:/source" -w "C:/source" "$@"
 }
-#getting error?
+
 function impacket() {
     docker run --rm -it rflathers/impacket "$@"
 }
@@ -189,26 +195,23 @@ webdavhere() {
     docker run --rm -it -p 80:80 -v "${PWD}:/srv/data/share" rflathers/webdav
 }
 
-    docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" metasploitframework/metasploit-framework ./msfconsole "$@"
-}
-
-metasploitports() {
+function metasploitports() {
     docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -p 8443-8500:8443-8500 metasploitframework/metasploit-framework ./msfconsole "$@"
 }
 
-msfvenomhere() {
+function msfvenomhere() {
     docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -v "${PWD}:/data" metasploitframework/metasploit-framework ./msfvenom "$@"
 }
 
-reqdump() {
+function reqdump() {
     docker run --rm -it -p 80:3000 rflathers/reqdump
 }
 
-postfiledumphere() {
+function postfiledumphere() {
     docker run --rm -it -p80:3000 -v "${PWD}:/data" rflathers/postfiledump
 }
 
-function msfvenom() {
+function msfvenom4() {
     local entrydir="/usr/src/metasploit-framework"
     local image="metasploitframework/metasploit-framework:latest"
     local name="msfvenom_$(head -c 8 /dev/random | xxd -p)"
@@ -218,10 +221,4 @@ function msfvenom() {
         --entrypoint "$entrydir/docker/entrypoint.sh" -i \
         --name "$name" --rm -tv "$HOME/.msf4":/home/msf/.msf4 \
         -v "$(pwd)":/msf:Z -w /msf $image "$entrydir/msfvenom" "$@"
-}
-
-#shown the contents of a directory immediately after moving to it by cd DIRECTORY 
-cdl()    {
-  cd"$@";
-  ls -al;
 }
