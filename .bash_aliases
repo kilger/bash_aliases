@@ -46,6 +46,8 @@ alias msfvenomhere="docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -v "$
 alias postfiledumphere="docker run --rm -it -p80:3000 -v "${PWD}:/data" rflathers/postfiledump"
 alias reqdump="docker run --rm -it -p 80:3000 rflathers/reqdump"
 alias pwncat="docker build -t pwncat ."
+#docker pull resilio/sync
+alias sync="docker run -d --name Sync -p 127.0.0.1:$WEBUI_PORT:8888 -p 55555 -v $DATA_FOLDER:/mnt/sync --restart on-failure resilio/sync"
 
 
 #git
