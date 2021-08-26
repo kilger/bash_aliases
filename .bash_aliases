@@ -171,11 +171,11 @@ function dockerwindowshellhere() {
     docker -c 2019-box run --rm -it -v "C:${PWD}:C:/source" -w "C:/source" "$@"
 }
 #getting error?
-impacket() {
+function impacket() {
     docker run --rm -it rflathers/impacket "$@"
 }
 
-smbservehere() {
+function smbservehere() {
     local sharename
     [[ -z $1 ]] && sharename="SHARE" || sharename=$1
     docker run --rm -it -p 445:445 -v "${PWD}:/tmp/serve" rflathers/impacket smbserver.py -smb2support $sharename /tmp/serve
