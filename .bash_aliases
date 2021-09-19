@@ -140,6 +140,8 @@ export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 alias curl="curl -A '$AGENT'"
 alias wget="wget -U '$AGENT'"
 alias nmap="nmap --script-args=\"http.useragent='$AGENT' \""
+#vpn
+alias fsvpn="openvpn --script-security 2 --down vpn-down.sh --config"
 
 #find the files that has been added/modified most recently:
 alias lt="ls -alrt"
