@@ -1,9 +1,5 @@
 #reload bashrc after changes
-#source .bashrc or ralias
-
-#or
-#$ source ~/.bashrc
-# $ source ~/.bash_aliases
+#source ~/.bashrc or Rass
 
 ## ---Must be in  ~/.bashrc ---
 #if [ -f ~/.bash_aliases ]; then
@@ -17,7 +13,7 @@ alias Ualias="wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/b
 alias Rass="source ~/.bashrc"
 
 #apt install, just add package ie $sai ufw
-alias sai="sudo apt install -y"
+alias Sai="sudo apt install -y"
 
 # become root #
 alias root='sudo -i'
