@@ -13,8 +13,8 @@
 
 # git install bash_aliases
 # wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/bash_aliases/main/.bash_aliases
-alias Ualias="wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/bash_aliases/main/.bash_aliases" && "source ~/.bashrc"
-alias rass="source ~/.bashrc"
+alias Ualias="wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/bash_aliases/main/.bash_aliases" 
+alias Rass="source ~/.bashrc"
 
 #apt install, just add package ie $sai ufw
 alias sai="sudo apt install -y"
