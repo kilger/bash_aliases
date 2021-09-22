@@ -69,7 +69,7 @@ alias lll="ls -all | less"
 alias lt="ls --tree"
 
 #IP
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias IP="dig +short myip.opendns.com @resolver1.opendns.com"
 alias network.connections='sudo lsof -l -i +L -R -V'
 alias network.established='sudo lsof -l -i +L -R -V | grep ESTABLISHED'
 alias network.externalip='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
