@@ -54,6 +54,9 @@ alias Dps="docker ps"
 alias Ds="docker start"
 alias Dv="docker --version"
 
+#exploitdb copy 
+alias Ecp="cp /usr/share/exploitdb/exploits/"
+
 #git
 alias g=git
 alias gita="git add -A ."
