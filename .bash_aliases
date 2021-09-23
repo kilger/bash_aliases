@@ -104,6 +104,7 @@ alias ta="tmux attach-session -t "
 alias tk="tmux kill-session -t "
 alias tn="tmux new -s "
 alias tl="tmux list-session"
+alias Utmux="wget -O ~/.tmux.conf https://raw.githubusercontent.com/kilger/tmux/main/.tmux.conf"
 
 #restore tmux session even after reboot
 alias mux="pgrep -vx tmux > /dev/null && \
