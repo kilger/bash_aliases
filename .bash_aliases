@@ -104,6 +104,8 @@ alias Ta="tmux attach-session -t "
 alias Tk="tmux kill-session -t "
 alias Tn="tmux new -s "
 alias Tl="tmux list-session"
+alias Tlp="tmux list-panes"
+alias Tsk="tmux send-keys"
 alias Utmux="wget -O ~/.tmux.conf https://raw.githubusercontent.com/kilger/tmux/main/.tmux.conf"
 alias Tsource="tmux source-file ~/.tmux.conf"
 
