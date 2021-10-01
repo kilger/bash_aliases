@@ -186,13 +186,14 @@ function dockerwindowshellhere() {
 function impacket() {
     docker run --rm -it rflathers/impacket "$@"
 }
-
+#SMB Server with Impacket $smbserverhere in the folder to share, access \\IP\share
 function smbservehere() {
     local sharename
     [[ -z $1 ]] && sharename="SHARE" || sharename=$1
     docker run --rm -it -p 445:445 -v "${PWD}:/tmp/serve" rflathers/impacket smbserver.py -smb2support $sharename /tmp/serve
 }
-
+#Serving HTTP Files w nginx can browse the contents with a browser, or use curl/wget/invoke-webrequest:  \\IP
+# $ nginxhere in folder to share
 nginxhere() {
     docker run --rm -it -p 80:80 -p 443:443 -v "${PWD}:/srv/data" rflathers/nginxserve
 }
