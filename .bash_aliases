@@ -98,6 +98,8 @@ alias vansible="cd ~/python_virtualenv/vansible/vansible4.0/ && source bin/activ
 alias sstatus="sudo systemctl status -l"
 alias srestart="sudo systemctl restart"
 
+#rsync
+alias Bu="rsync -avzx  /home linus@192.168.86.44:/volume1/NetBackup/$(hostname)"
 
 # tmux
 alias T="tmux"
