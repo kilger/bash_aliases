@@ -232,5 +232,7 @@ function msfvenom4() {
         -v "$(pwd)":/msf:Z -w /msf $image "$entrydir/msfvenom" "$@"
 }
 
+function Mkdir () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+
 #stop capturing in history
 HISTIGNORE="ls:cd:pwd"
