@@ -231,3 +231,6 @@ function msfvenom4() {
         --name "$name" --rm -tv "$HOME/.msf4":/home/msf/.msf4 \
         -v "$(pwd)":/msf:Z -w /msf $image "$entrydir/msfvenom" "$@"
 }
+
+#stop capturing in history
+HISTIGNORE="ls:cd:pwd"
