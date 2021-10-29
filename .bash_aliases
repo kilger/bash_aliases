@@ -123,8 +123,8 @@ alias mux="pgrep -vx tmux > /dev/null && \
 
 
 # debian update system
-alias dup="sudo apt clean && apt-get update && apt-get upgrade && apt-get dist-upgrade"
-alias update="sudo --sh -c '/root/bin/chk_disk && dnf update'"
+alias Update="sudo apt clean && sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade"
+#alias update="sudo --sh -c '/root/bin/chk_disk && dnf update'"
 
 #check ports open
 alias whatisopen="sudo lsof -i && sudo nmap -p- -sU -sS --open 127.0.0.1"
@@ -141,7 +141,7 @@ alias weather="curl wttr.in/"
 
 #-c flag in order to continue the download in case of problems
 alias wget="wget -c"
-alias h=history
+alias H=history
 
 #Red Team
 export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
