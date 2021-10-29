@@ -35,9 +35,11 @@ alias cpProgress="rsync --progress -ravz"
 
 #docker
 alias testdocker="docker run hello-world"
+alias Td="docker run hello-world"
 alias dockershell="docker run --rm -i -t --entrypoint=/bin/bash"
 alias dockershellsh="docker run --rm -i -t --entrypoint=/bin/sh"
 alias impacket="docker run --rm -it rflathers/impacket"
+alias Imp="docker run --rm -it rflathers/impacket"
 alias metasploit="docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" metasploitframework/metasploit-framework ./msfconsole"
 alias metasploitports="docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -p 8443-8500:8443-8500 metasploitframework/metasploit-framework ./msfconsole"
 alias msfvenomhere="docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -v "${PWD}:/data" metasploitframework/metasploit-framework ./msfvenom"
@@ -45,7 +47,7 @@ alias postfiledumphere="docker run --rm -it -p80:3000 -v "${PWD}:/data" rflather
 alias reqdump="docker run --rm -it -p 80:3000 rflathers/reqdump"
 alias pwncat="docker build -t pwncat ."
 #docker pull resilio/sync
-alias sync="docker run -d --name Sync -p 127.0.0.1:$WEBUI_PORT:8888 -p 55555 -v $DATA_FOLDER:/mnt/sync --restart on-failure resilio/sync"
+alias Sync="docker run -d --name Sync -p 127.0.0.1:$WEBUI_PORT:8888 -p 55555 -v $DATA_FOLDER:/mnt/sync --restart on-failure resilio/sync"
 alias Di="docker images"
 alias Dl="docker login"
 alias Dps="docker ps"
@@ -97,8 +99,8 @@ alias vansible4="source ansible4.0/bin/activate"
 alias vansible="cd ~/python_virtualenv/vansible/vansible4.0/ && source bin/activate && cd ~/ansible"
 
 
-alias sstatus="sudo systemctl status -l"
-alias srestart="sudo systemctl restart"
+alias Status="sudo systemctl status -l"
+alias Restart="sudo systemctl restart"
 
 #rsync
 alias Bu="rsync -avzx  /home linus@192.168.86.44:/volume1/NetBackup/$(hostname)"
