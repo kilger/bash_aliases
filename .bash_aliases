@@ -1,5 +1,5 @@
 #reload bashrc after changes
-#source ~/.bashrc or Rass
+#source ~/.bashrc or Ralias
 
 ## ---Must be in  ~/.bashrc ---
 #if [ -f ~/.bash_aliases ]; then
@@ -57,11 +57,11 @@ alias Ecp="cp /usr/share/exploitdb/exploits/"
 
 
 #git
-alias g=git
-alias gita="git add -A ."
-alias gitc="git commit -m"
-alias gitp="git push"
-alias gits="git status"
+alias G=git
+alias Ga="git add -A ."
+alias Gc="git commit -m"
+alias Gp="git push"
+alias Gs="git status"
 
 alias laa="ls -la"
 alias lll="ls -all | less"
@@ -69,27 +69,27 @@ alias lt="ls --tree"
 
 #IP
 alias IP="dig +short myip.opendns.com @resolver1.opendns.com"
-alias network.connections='sudo lsof -l -i +L -R -V'
-alias network.established='sudo lsof -l -i +L -R -V | grep ESTABLISHED'
-alias network.externalip='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
+alias Nc='sudo lsof -l -i +L -R -V'
+alias Ne='sudo lsof -l -i +L -R -V | grep ESTABLISHED'
+alias Nex='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
 
 # display all rules #
-alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
-alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
-alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
-alias iptlistfw='sudo /sbin/iptables -L FORWORD -n -v --line-numbers'
-alias firewall=iptlist
+alias Iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
+alias Iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
+alias Iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
+alias Iptlistfw='sudo /sbin/iptables -L FORWORD -n -v --line-numbers'
+alias Firewall=iptlist
 
 #Test internet speed
-alias netspeed="curl -L https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -o fast && wget https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -O fast"
+alias Netspeed="curl -L https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -o fast && wget https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -O fast"
 
 
 # Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 #alias LetsHack=sudo systemctl start openvpn && sudo openvpn /thm/yourvpn-profile.ovpn
-#alias LetsHackthebox=sudo systemctl start openvpn && sudo openvpn /thm/yourvpn-profile.ovpn
-
+#alias Htb=sudo systemctl start openvpn && sudo openvpn /htb/yourvpn-profile.ovpn
+#alias Thm=sudo systemctl start openvpn && sudo openvpn /thm/yourvpn-profile.ovpn
 
 #python virtual environments ansible
 alias vansible4="source ansible4.0/bin/activate"
@@ -112,7 +112,7 @@ alias Tl="tmux list-session"
 alias Tlp="tmux list-panes"
 alias Tsk="tmux send-keys"
 alias Utmux="wget -O ~/.tmux.conf https://raw.githubusercontent.com/kilger/tmux/main/.tmux.conf"
-alias Tsource="tmux source-file ~/.tmux.conf"
+alias Rtmux="tmux source-file ~/.tmux.conf"
 
 #restore tmux session even after reboot
 alias mux="pgrep -vx tmux > /dev/null && \
@@ -156,6 +156,7 @@ alias lt="ls -alrt"
 
 # file tree of current directory
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+
 
 #Functions:
 #shown the contents of a directory immediately after moving to it by cd DIRECTORY
@@ -237,4 +238,4 @@ function msfvenom4() {
 function Mkdir () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 #stop capturing in history
-HISTIGNORE="ls:cd:pwd"
+HISTIGNORE="cd:ls:exit:mkdir:Mkdir:pwd"
