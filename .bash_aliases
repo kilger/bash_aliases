@@ -123,7 +123,7 @@ alias mux="pgrep -vx tmux > /dev/null && \
 
 
 # debian update system
-alias Update="sudo apt clean && sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade"
+alias Update="sudo apt clean && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade"
 #alias update="sudo --sh -c '/root/bin/chk_disk && dnf update'"
 
 #check ports open
