@@ -32,6 +32,7 @@ alias Ap="ansible-playbook"
 #progress bar on file copy. Useful evenlocal.
 alias cpProgress="rsync --progress -ravz"
 
+
 #docker
 alias testdocker="docker run hello-world"
 alias dockershell="docker run --rm -i -t --entrypoint=/bin/bash"
@@ -53,6 +54,7 @@ alias Dv="docker --version"
 
 #exploitdb copy 
 alias Ecp="cp /usr/share/exploitdb/exploits/"
+
 
 #git
 alias g=git
