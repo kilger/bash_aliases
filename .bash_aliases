@@ -58,12 +58,14 @@ alias Dv="docker --version"
 alias Ecp="cp /usr/share/exploitdb/exploits/"
 
 
-#git
+#github
 alias G=git
 alias Ga="git add -A ."
 alias Gc="git commit -m"
+alias Gcc="echo add comment -"comment" && git commit -m"
 alias Gp="git push"
 alias Gs="git status"
+alias Gt=ssh -T git@github.com"
 
 alias laa="ls -la"
 alias lll="ls -all | less"
