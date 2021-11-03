@@ -66,6 +66,8 @@ alias Gp="git push"
 alias Gs="git status"
 alias Gt="ssh -T git@github.com"
 
+alias H=history
+
 alias laa="ls -la"
 alias lll="ls -all | less"
 alias lt="ls --tree"
@@ -86,7 +88,6 @@ alias Firewall=iptlist
 #Test internet speed
 alias Netspeed="curl -L https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -o fast && wget https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -O fast"
 
-
 # Lock the screen (when going AFK)
 alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
@@ -98,7 +99,6 @@ alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias vansible4="source ansible4.0/bin/activate"
 #alias vansible="cd ~/python-venv && source ansible4.0/bin/activate && cd ~/ansible"
 alias vansible="cd ~/python_virtualenv/vansible/vansible4.0/ && source bin/activate && cd ~/ansible"
-
 
 alias Status="sudo systemctl status -l"
 alias Restart="sudo systemctl restart"
@@ -124,10 +124,17 @@ alias mux="pgrep -vx tmux > /dev/null && \
                 tmux kill-session -t delete-me && \
                 tmux attach || tmux attach"
 
+#automatically launch tmux when you ssh into this machine
+if [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
 
 # debian update system
-alias Update="sudo apt clean && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade"
+alias Ud="sudo apt clean && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade"
 #alias update="sudo --sh -c '/root/bin/chk_disk && dnf update'"
+
+# centos update sytem
+# alias Uc
 
 #check ports open
 alias whatisopen="sudo lsof -i && sudo nmap -p- -sU -sS --open 127.0.0.1"
@@ -144,7 +151,6 @@ alias weather="curl wttr.in/"
 
 #-c flag in order to continue the download in case of problems
 alias wget="wget -c"
-alias H=history
 
 #Red Team
 #export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
