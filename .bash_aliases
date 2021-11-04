@@ -101,7 +101,8 @@ alias vansible4="source ansible4.0/bin/activate"
 alias vansible="cd ~/python_virtualenv/vansible/vansible4.0/ && source bin/activate && cd ~/ansible"
 
 alias Status="sudo systemctl status -l"
-alias Restart="sudo systemctl restart"
+alias Restart="sudo shutdown -r now"
+#alias Restart="sudo systemctl restart"
 
 #rsync
 alias Bu="rsync -avzx  /home linus@192.168.86.44:/volume1/NetBackup/$(hostname)"
