@@ -108,16 +108,17 @@ alias Restart="sudo shutdown -r now"
 alias Bu="rsync -avzx  /home linus@192.168.86.44:/volume1/NetBackup/$(hostname)"
 
 # tmux
+alias Rtmux="tmux source-file ~/.tmux.conf"
 alias T="tmux"
 alias Ta="tmux attach-session -t "
 alias Tk="tmux kill-session -t "
-alias Tn="tmux new -s "
-alias Tl="tmux list-session"
+#load stored session
+alias Tl="tmuxp load  ~/.tmuxp/"
 alias Tlp="tmux list-panes"
+alias Tls="tmux list-session"
+alias Tn="tmux new -s "
 alias Tsk="tmux send-keys"
 alias Utmux="wget -O ~/.tmux.conf https://raw.githubusercontent.com/kilger/tmux/main/.tmux.conf"
-alias Rtmux="tmux source-file ~/.tmux.conf"
-
 #restore tmux session even after reboot
 alias mux="pgrep -vx tmux > /dev/null && \
                 tmux new -d -s delete-me && \
@@ -126,9 +127,9 @@ alias mux="pgrep -vx tmux > /dev/null && \
                 tmux attach || tmux attach"
 
 #automatically launch tmux when you ssh into this machine
-if [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
+#if [ -z "$TMUX" ]; then
+#    tmux attach -t default || tmux new -s default
+#fi
 
 # debian update system
 alias Ud="sudo apt clean && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade"
