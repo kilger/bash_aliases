@@ -113,7 +113,7 @@ alias T="tmux"
 alias Ta="tmux attach-session -t "
 alias Tk="tmux kill-session -t "
 #load stored session
-alias Tl="tmuxp load  ~/.tmuxp/"
+alias Tl="tmuxp load  ~/.tmuxp/pentest01.yml"
 alias Tlp="tmux list-panes"
 alias Tls="tmux list-session"
 alias Tn="tmux new -s "
