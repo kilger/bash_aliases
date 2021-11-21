@@ -28,10 +28,8 @@ alias ......="cd ../../../../.."
 
 #ansible
 alias Ap="ansible-playbook"
-
-#progress bar on file copy. Useful evenlocal.
-alias cpProgress="rsync --progress -ravz"
-
+alias Apt='wget -O ~/task_apt.yml https://raw.githubusercontent.com/kilger/ubuntu_setup/main/task_apt.yml && Ap ~/task_apt.yml'
+alias Vpython='sudo apt update  && sudo apt install python3 python3-venv virtualenv python3-virtualenv -y && Mkdir ~/python_virtualenv/vansible && virtualenv -p python3 vansible4.0 && source /vansible4.0/bin/activate && python3 -m pip install --upgrade pip && python3 -m pip install ansible==4.0.'
 
 #docker
 alias testdocker="docker run hello-world"
@@ -72,6 +70,8 @@ alias laa="ls -la"
 alias lll="ls -all | less"
 alias lt="ls --tree"
 
+
+
 #IP
 alias IP="dig +short myip.opendns.com @resolver1.opendns.com"
 alias Nc='sudo lsof -l -i +L -R -V'
@@ -106,6 +106,8 @@ alias Restart="sudo shutdown -r now"
 
 #rsync
 alias Bu="rsync -avzx  /home linus@192.168.86.44:/volume1/NetBackup/$(hostname)"
+#progress bar on file copy. Useful evenlocal.
+alias Rsync="rsync --progress -ravz"
 
 # tmux
 alias Rtmux="tmux source-file ~/.tmux.conf"
@@ -154,11 +156,12 @@ alias weather="curl wttr.in/"
 #-c flag in order to continue the download in case of problems
 alias wget="wget -c"
 
+
 #Red Team
-#export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
+export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
 alias curl="curl -A '$AGENT'"
 alias wget="wget -U '$AGENT'"
-alias nmap="nmap --script-args=\"http.useragent='$AGENT' \""
+alias nmap="grc nmap --script-args=\"http.useragent='$AGENT' \""
 #vpn
 alias fsvpn="openvpn --script-security 2 --down vpn-down.sh --config"
 
