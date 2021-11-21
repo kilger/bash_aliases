@@ -94,6 +94,9 @@ alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 #alias LetsHack=sudo systemctl start openvpn && sudo openvpn /thm/yourvpn-profile.ovpn
 #alias Htb=sudo systemctl start openvpn && sudo openvpn /htb/yourvpn-profile.ovpn
 #alias Thm=sudo systemctl start openvpn && sudo openvpn /thm/yourvpn-profile.ovpn
+alias Thm='sudo openvpn ~/addusername.ovpn'
+#alias Thmfs='$ sudo openvpn ~/addusername.ovpn 
+#                     openvpn --script-security 2 --down vpn-down.sh --config
 
 #python virtual environments ansible
 alias vansible4="source ansible4.0/bin/activate"
