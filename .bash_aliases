@@ -108,6 +108,13 @@ alias Thm='sudo openvpn ~/addusername.ovpn'
 #alias Thmfs='$ sudo openvpn ~/addusername.ovpn 
 #                     openvpn --script-security 2 --down vpn-down.sh --config
 
+
+
+#nmap search scripts
+alias Nss="cd /usr/share/nmap/scripts/ && ls -al" 
+#usage $ Nss *vuln*
+
+
 #python virtual environments ansible
 alias vansible4="source ansible4.0/bin/activate"
 #alias vansible="cd ~/python-venv && source ansible4.0/bin/activate && cd ~/ansible"
