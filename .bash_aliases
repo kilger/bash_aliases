@@ -88,7 +88,7 @@ alias Nc='sudo lsof -l -i +L -R -V'
 alias Ne='sudo lsof -l -i +L -R -V | grep ESTABLISHED'
 alias Nex='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
 
-# display all rules #
+#display all rules #
 alias Iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
 alias Iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
 alias Iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
@@ -174,7 +174,7 @@ alias wget="wget -c"
 export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
 alias curl="curl -A '$AGENT'"
 alias wget="wget -U '$AGENT'"
-alias nmap="grc nmap --script-args=\"http.useragent='$AGENT' \""
+alias nmap="sudo grc nmap --script-args=\'http.useragent='$AGENT' \'"
 #vpn
 alias fsvpn="openvpn --script-security 2 --down vpn-down.sh --config"
 
@@ -224,6 +224,7 @@ function smbservehere() {
     [[ -z $1 ]] && sharename="SHARE" || sharename=$1
     docker run --rm -it -p 445:445 -v "${PWD}:/tmp/serve" rflathers/impacket smbserver.py -smb2support $sharename /tmp/serve
 }
+
 #Serving HTTP Files w nginx can browse the contents with a browser, or use curl/wget/invoke-webrequest:  \\IP
 # $ nginxhere in folder to share
 nginxhere() {
