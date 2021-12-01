@@ -296,5 +296,36 @@ function _ssh_sesslog() {
 }
 # Alias: alias ssh='_ssh_sesslog'
 
+
+# Get ASN
+# Dependencies:  - curl & python
+
+function GetASN() {
+
+  local _ip="$1"
+
+  local _curl_base="curl --request GET"
+  local _timeout="15"
+
+  _asn=$($_curl_base -ks -m "$_timeout" "http://ip-api.com/json/${_ip}" | \
+  python -c 'import sys, json; print json.load(sys.stdin)["as"]' 2>/dev/null)
+
+  _state=$(echo $?)
+
+  if [[ -z "$_ip" ]] || [[ "$_ip" == "null" ]] || [[ "$_state" -ne 0 ]]; then
+
+    echo -en "Unsuccessful ASN gathering.\\n"
+
+  else
+
+    echo -en "$_ip > $_asn\\n"
+
+  fi
+
+}
+# GetASN 1.1.1.1
+
+
+
 #stop capturing in history
 HISTIGNORE="cd:ls:exit:mkdir:Mkdir:pwd"
