@@ -93,7 +93,7 @@ alias Iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
 alias Iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
 alias Iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
 alias Iptlistfw='sudo /sbin/iptables -L FORWORD -n -v --line-numbers'
-alias Firewall=iptlist
+alias Firewall='sudo iptables -L --line-numbers'
 
 #Test internet speed
 alias Netspeed="curl -L https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -o fast && wget https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -O fast"
@@ -156,7 +156,7 @@ alias mux="pgrep -vx tmux > /dev/null && \
 #fi
 
 # debian update system
-alias Ud="sudo apt clean && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade"
+alias Ud="sudo apt clean && sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y"
 #alias update="sudo --sh -c '/root/bin/chk_disk && dnf update'"
 
 # centos update sytem
