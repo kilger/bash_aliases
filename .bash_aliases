@@ -98,6 +98,7 @@ alias Iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
 alias Iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
 alias Iptlistfw='sudo /sbin/iptables -L FORWORD -n -v --line-numbers'
 alias Firewall='sudo iptables -L --line-numbers'
+alias Ip='ip -s link show && echo IPv4 && ip -4 a s && echo IPv6 && ip -6 a s && echo "External" && IP'
 
 #Test internet speed
 alias Netspeed="curl -L https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -o fast && wget https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -O fast"
