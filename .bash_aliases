@@ -30,6 +30,7 @@ alias ......="cd ../../../../.."
 alias Ap="ansible-playbook"
 alias Apt='wget -O ~/task_apt.yml https://raw.githubusercontent.com/kilger/ubuntu_setup/main/task_apt.yml && Ap ~/task_apt.yml'
 alias Vpython="sudo apt update \
+&& mkdir ~/ansible \
 && sudo apt install python3 python3-venv virtualenv python3-virtualenv -y \
 && Mkdir ~/python_virtualenv/vansible && virtualenv -p python3 vansible4.0 \
 && source ./vansible4.0/bin/activate && python3 -m pip install --upgrade pip \
