@@ -36,6 +36,7 @@ alias Vpython="sudo apt update \
 && python3 -m pip install ansible==4.0."
 
 alias Vp="sudo apt update \
+&& mkdir ~/ansible \
 && sudo apt install python3 python3-venv virtualenv python3-virtualenv -y \
 && Mkdir ~/python_virtualenv/vansible && virtualenv -p python3 vansible4.0 \
 && source ./vansible4.0/bin/activate && python3 -m pip install --upgrade pip \
