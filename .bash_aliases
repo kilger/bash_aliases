@@ -37,13 +37,10 @@ alias Vpython="sudo apt update \
 && python3 -m pip install ansible==4.0. \
 && cd ~/ansible" 
 
-alias Vp="sudo apt update \
-&& mkdir ~/ansible \
-&& sudo apt install python3 python3-venv virtualenv python3-virtualenv -y \
-&& Mkdir ~/python_virtualenv/vansible && virtualenv -p python3 vansible4.0 \
-&& source ./vansible4.0/bin/activate && python3 -m pip install --upgrade pip \
-&& python3 -m pip install ansible==4.0. \
-&& cd ~/ansible" 
+# Lock the screen (when going AFK)
+alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+
 
 #docker
 alias testdocker="docker run hello-world"
@@ -58,6 +55,7 @@ alias msfvenomhere="docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -v "$
 alias postfiledumphere="docker run --rm -it -p80:3000 -v "${PWD}:/data" rflathers/postfiledump"
 alias reqdump="docker run --rm -it -p 80:3000 rflathers/reqdump"
 alias pwncat="docker build -t pwncat ."
+
 #docker pull resilio/sync
 alias Sync="docker run -d --name Sync -p 127.0.0.1:$WEBUI_PORT:8888 -p 55555 -v $DATA_FOLDER:/mnt/sync --restart on-failure resilio/sync"
 alias Di="docker images"
@@ -68,7 +66,6 @@ alias Dv="docker --version"
 
 #exploitdb copy 
 alias Ecp="cp /usr/share/exploitdb/exploits/"
-
 
 #github
 alias G=git
@@ -84,13 +81,9 @@ alias laa="ls -la"
 alias lll="ls -all | less"
 alias lt="ls --tree"
 
-
-
 #IP
 alias IP="dig +short myip.opendns.com @resolver1.opendns.com"
-alias Nc='sudo lsof -l -i +L -R -V'
-alias Ne='sudo lsof -l -i +L -R -V | grep ESTABLISHED'
-alias Nex='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
+alias Ip='ip -s link show && echo IPv4 && ip -4 a s && echo IPv6 && ip -6 a s && echo "External IPv4" && IP'
 
 #display all rules #
 alias Iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
@@ -98,27 +91,27 @@ alias Iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
 alias Iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
 alias Iptlistfw='sudo /sbin/iptables -L FORWORD -n -v --line-numbers'
 alias Firewall='sudo iptables -L --line-numbers'
-alias Ip='ip -s link show && echo IPv4 && ip -4 a s && echo IPv6 && ip -6 a s && echo "External IPv4" && IP'
+
+#find the files that has been added/modified most recently:
+alias lt="ls -alrt"
 
 #Test internet speed
 alias Netspeed="curl -L https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -o fast && wget https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -O fast"
 
-# Lock the screen (when going AFK)
-alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias Nc='sudo lsof -l -i +L -R -V'
+alias Ne='sudo lsof -l -i +L -R -V | grep ESTABLISHED'
+alias Nex='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
 
 #alias LetsHack=sudo systemctl start openvpn && sudo openvpn /thm/yourvpn-profile.ovpn
 #alias Htb=sudo systemctl start openvpn && sudo openvpn /htb/yourvpn-profile.ovpn
 #alias Thm=sudo systemctl start openvpn && sudo openvpn /thm/yourvpn-profile.ovpn
 alias Thm='sudo openvpn ~/addusername.ovpn'
 #alias Thmfs='$ sudo openvpn ~/addusername.ovpn 
-#                     openvpn --script-security 2 --down vpn-down.sh --config
-
-
+# openvpn --script-security 2 --down vpn-down.sh --config
 
 #nmap search scripts
 alias Nss="cd /usr/share/nmap/scripts/ && ls -al" 
 #usage $ Nss *vuln*
-
 
 #python virtual environments ansible
 alias vansible4="source ansible4.0/bin/activate"
@@ -174,15 +167,14 @@ alias whatisopen="sudo lsof -i && sudo nmap -p- -sU -sS --open 127.0.0.1"
 #alias -="cd -"
 
 #add date stamp to bash history
-export HISTTIMEFORMAT="%F %T"
+export HISTTIMEFORMAT="%F %T  "
 
 #weather
-alias weather="curl wttr.in/"
+alias weather="curl wttr.in/ "
 #weather toronto
 
 #-c flag in order to continue the download in case of problems
 alias wget="wget -c"
-
 
 #Red Team
 export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
@@ -192,12 +184,16 @@ alias nmap="sudo grc nmap --script-args=\'http.useragent='$AGENT' \'"
 #vpn
 alias fsvpn="openvpn --script-security 2 --down vpn-down.sh --config"
 
-#find the files that has been added/modified most recently:
-alias lt="ls -alrt"
-
 # file tree of current directory
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
+alias Vp="sudo apt update \
+&& mkdir ~/ansible \
+&& sudo apt install python3 python3-venv virtualenv python3-virtualenv -y \
+&& Mkdir ~/python_virtualenv/vansible && virtualenv -p python3 vansible4.0 \
+&& source ./vansible4.0/bin/activate && python3 -m pip install --upgrade pip \
+&& python3 -m pip install ansible==4.0. \
+&& cd ~/ansible" 
 
 #Functions:
 #shown the contents of a directory immediately after moving to it by cd DIRECTORY
@@ -205,7 +201,6 @@ cdl()    {
   cd"$@";
   ls -al;
 }
-
 
 function dockershell() {
     docker run --rm -i -t --entrypoint=/bin/bash "$@"
@@ -299,6 +294,7 @@ function _ssh_sesslog() {
   ssh $@ 2>&1 | tee -a "${_sesdir}/$(date +%Y%m%d).log"
 
 }
+
 # Alias: alias ssh='_ssh_sesslog'
 
 
@@ -354,7 +350,6 @@ function DomainResolve() {
 
 }
 # Example: $ DomainResolve nmap.org
-
 
 #stop capturing in history
 HISTIGNORE="cd:ls:exit:mkdir:Mkdir:pwd"
