@@ -71,6 +71,11 @@ alias Dv="docker --version"
 #exploitdb copy 
 alias Ecp="cp /usr/share/exploitdb/exploits/"
 
+#firewall
+alias firewallsave="sudo iptables-save >" 
+alias firwallrestore="sudo iptables-restore <"
+
+
 #github
 alias G=git
 alias Ga="git add -A ."
