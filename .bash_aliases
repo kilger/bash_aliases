@@ -32,13 +32,7 @@ alias ......="cd ../../../../.."
 #ansible
 alias Ap="ansible-playbook"
 alias Apt='wget -O ~/task_apt.yml https://raw.githubusercontent.com/kilger/ubuntu_setup/main/task_apt.yml && Ap ~/task_apt.yml'
-alias Vpython="sudo apt update \
-&& mkdir ~/ansible \
-&& sudo apt install python3 python3-venv virtualenv python3-virtualenv -y \
-&& Mkdir ~/python_virtualenv/vansible && virtualenv -p python3 vansible4.0 \
-&& source ./vansible4.0/bin/activate && python3 -m pip install --upgrade pip \
-&& python3 -m pip install ansible==4.0. \
-&& cd ~/ansible" 
+
 
 # Lock the screen (when going AFK)
 alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
@@ -205,7 +199,16 @@ alias fsvpn="openvpn --script-security 2 --down vpn-down.sh --config"
 # file tree of current directory
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
+#virtual python3
 alias Vp="sudo apt update \
+&& sudo apt install python3 python3-venv virtualenv python3-virtualenv -y \
+&& Mkdir ~/python_virtualenv/vansible && virtualenv -p python3 vansible4.0 \
+&& source ./vansible4.0/bin/activate && python3 -m pip install --upgrade pip \
+&& python3 -m pip install ansible==4.0. \
+&& cd ~/ansible" 
+
+#virtual python3 setup
+alias Vps="sudo apt update \
 && mkdir ~/ansible \
 && sudo apt install python3 python3-venv virtualenv python3-virtualenv -y \
 && Mkdir ~/python_virtualenv/vansible && virtualenv -p python3 vansible4.0 \
