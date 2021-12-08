@@ -259,6 +259,7 @@ function smbservehere() {
 # $ nginxhere in folder to share
 nginxhere() {
     docker run --rm -it -p 80:80 -p 443:443 -v "${PWD}:/srv/data" rflathers/nginxserve
+    sudo iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
 }
 
 webdavhere() {
