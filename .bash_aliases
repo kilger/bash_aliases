@@ -40,7 +40,8 @@ alias Vpython="sudo apt update \
 # Lock the screen (when going AFK)
 alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-
+alias C="sed '/^#\|^$\| *#/d'" 
+#$ C pathtofile/<file>   cat like but remove blank commented lines
 
 #docker
 alias testdocker="docker run hello-world"
