@@ -109,6 +109,10 @@ alias Thm='sudo openvpn ~/addusername.ovpn'
 #alias Thmfs='$ sudo openvpn ~/addusername.ovpn 
 # openvpn --script-security 2 --down vpn-down.sh --config
 
+alias Rb="sed '/^#\|^$\| *#/d'" 
+alias Rbc="sed '/^#\|^$\| *#/d'" 
+# Rbc pathtofile/<file>   remove blank commented
+
 #nmap search scripts
 alias Nss="cd /usr/share/nmap/scripts/ && ls -al" 
 #usage $ Nss *vuln*
