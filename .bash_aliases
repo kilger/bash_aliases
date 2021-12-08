@@ -67,7 +67,7 @@ alias Ecp="cp /usr/share/exploitdb/exploits/"
 
 #firewall
 alias firewallsave="sudo iptables-save >" 
-alias firwallrestore="sudo iptables-restore <"
+alias firewallrestore="sudo iptables-restore <"
 
 
 #github
