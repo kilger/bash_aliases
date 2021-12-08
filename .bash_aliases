@@ -85,6 +85,8 @@ alias laa="ls -la"
 alias lll="ls -all | less"
 alias lt="ls --tree"
 
+
+
 #IP
 alias IP="dig +short myip.opendns.com @resolver1.opendns.com"
 alias Ip='ip -s link show && echo IPv4 && ip -4 a s && echo IPv6 && ip -6 a s && echo "External IPv4" && IP'
@@ -105,6 +107,9 @@ alias Netspeed="curl -L https://github.com/ddo/fast/releases/download/v0.0.4/fas
 alias Nc='sudo lsof -l -i +L -R -V'
 alias Ne='sudo lsof -l -i +L -R -V | grep ESTABLISHED'
 alias Nex='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
+
+alias N=nano
+alias Nl="nano --linenumbers"
 
 #alias LetsHack=sudo systemctl start openvpn && sudo openvpn /thm/yourvpn-profile.ovpn
 #alias Htb=sudo systemctl start openvpn && sudo openvpn /htb/yourvpn-profile.ovpn
