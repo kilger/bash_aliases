@@ -13,6 +13,9 @@ alias Ualias="wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/b
 #reload alias
 alias Ralias="source ~/.bashrc"
 
+alias UR=Ualias && Ralias
+
+
 #apt install, just add package ie $sai ufw
 alias Sai="sudo apt install -y"
 
