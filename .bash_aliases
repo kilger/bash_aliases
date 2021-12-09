@@ -140,7 +140,8 @@ alias Bu="rsync -avzx  /home linus@192.168.86.44:/volume1/NetBackup/$(hostname)"
 #progress bar on file copy. Useful evenlocal.
 alias Rsync="rsync --progress -ravz"
 
-alias ssh='_ssh_sesslog'
+#alias ssh='_ssh_sesslog'
+#getting errors
 
 # tmux
 alias Rtmux="tmux source-file ~/.tmux.conf"
@@ -311,15 +312,14 @@ function Cd() {
         ls -F --color=auto
 }
 
-function _ssh_sesslog() {
-
-  _sesdir="<path/to/session/logs>"
-
-  mkdir -p "${_sesdir}" && \
-  ssh $@ 2>&1 | tee -a "${_sesdir}/$(date +%Y%m%d).log"
-
-}
-
+#function _ssh_sesslog() {
+#
+#  _sesdir="<path/to/session/logs>"
+#
+#  mkdir -p "${_sesdir}" && \
+#  ssh $@ 2>&1 | tee -a "${_sesdir}/$(date +%Y%m%d).log"
+#
+#}
 # Alias: alias ssh='_ssh_sesslog'
 
 
