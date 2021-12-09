@@ -33,6 +33,12 @@ alias ......="cd ../../../../.."
 alias Ap="ansible-playbook"
 alias Apt='wget -O ~/task_apt.yml https://raw.githubusercontent.com/kilger/ubuntu_setup/main/task_apt.yml && Ap ~/task_apt.yml'
 
+#from plumber's handbook
+alias psg='ps -ef | grep -i $1 '
+#$ psg ssh-agent
+alias nsg='netstat -natp | grep -i $1 '
+#$ nsg LIST
+#$ nsg 443
 
 # Lock the screen (when going AFK)
 alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
