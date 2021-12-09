@@ -33,12 +33,6 @@ alias ......="cd ../../../../.."
 alias Ap="ansible-playbook"
 alias Apt='wget -O ~/task_apt.yml https://raw.githubusercontent.com/kilger/ubuntu_setup/main/task_apt.yml && Ap ~/task_apt.yml'
 
-#from plumber's handbook
-alias psg='ps -ef | grep -i $1 '
-#$ psg ssh-agent
-alias nsg='netstat -natp | grep -i $1 '
-#$ nsg LIST
-#$ nsg 443
 
 # Lock the screen (when going AFK)
 alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
@@ -259,16 +253,18 @@ function smbservehere() {
     local sharename
     [[ -z $1 ]] && sharename="SHARE" || sharename=$1
     docker run --rm -it -p 445:445 -v "${PWD}:/tmp/serve" rflathers/impacket smbserver.py -smb2support $sharename /tmp/serve
+    #sudo iptables -I INPUT 1 -p tcp --dport 445 -j ACCEPT
 }
 
 #Serving HTTP Files w nginx can browse the contents with a browser, or use curl/wget/invoke-webrequest:  \\IP
 # $ nginxhere in folder to share
-nginxhere() {
+function nginxhere() {
     docker run --rm -it -p 80:80 -p 443:443 -v "${PWD}:/srv/data" rflathers/nginxserve
-    sudo iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
+    #sudo iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
+    #sudo iptables -I INPUT 1 -p tcp --dport 443 -j ACCEPT
 }
 
-webdavhere() {
+function webdavhere() {
     docker run --rm -it -p 80:80 -v "${PWD}:/srv/data/share" rflathers/webdav
 }
 
