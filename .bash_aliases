@@ -15,6 +15,10 @@ alias Ralias="source ~/.bashrc"
 
 alias UR="Ualias && Ralias"
 
+alias psg='ps -ef | grep -i $1 '
+#$ psg 384
+alias nsg='netstat -natp | grep -i $1 '
+#$ nsg 3389
 
 #apt install, just add package ie $sai ufw
 alias Sai="sudo apt install -y"
