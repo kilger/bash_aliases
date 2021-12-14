@@ -26,6 +26,8 @@ alias Sai="sudo apt install -y"
 # become root #
 alias root='sudo -i'
 alias su='sudo -i'
+#sudo !! -rerun last command with sudo priv
+alias F='sudo $(history -p !!)'
 
 alias ..="cd .."
 alias ...="cd ../.."
