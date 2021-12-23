@@ -174,7 +174,8 @@ alias mux="pgrep -vx tmux > /dev/null && \
 #fi
 
 # debian update system
-alias Ud="sudo apt clean && sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y"
+alias Ud="sudo apt clean && sudo apt-get update -y && sudo apt-get upgrade -y"
+alias Udall="sudo apt clean && sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y"
 #alias update="sudo --sh -c '/root/bin/chk_disk && dnf update'"
 
 # centos update sytem
