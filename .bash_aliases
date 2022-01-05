@@ -37,7 +37,10 @@ alias ......="cd ../../../../.."
 
 #ansible
 alias Ap="ansible-playbook"
-alias Apt='wget -O ~/task_apt.yml https://raw.githubusercontent.com/kilger/ubuntu_setup/main/task_apt.yml && Ap ~/task_apt.yml'
+#ansible apt update for kali
+alias Aptk='wget -O ~/ansible/task_aptk.yml https://raw.githubusercontent.com/kilger/kali_setup/main/task_apt.yml && Ap ~/ansible/task_aptk.yml'
+#ansible apt update for ubuntu
+alias Aptu='wget -O ~/ansible/task_aptu.yml https://raw.githubusercontent.com/kilger/ubuntu_setup/main/task_apt.yml && Ap ~/ansible/task_aptu.yml'
 
 
 # Lock the screen (when going AFK)
@@ -97,10 +100,10 @@ alias IP="dig +short myip.opendns.com @resolver1.opendns.com"
 alias Ip='ip -s link show && echo IPv4 && ip -4 a s && echo IPv6 && ip -6 a s && echo "External IPv4" && IP'
 
 #display all rules #
-alias Iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
-alias Iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
-alias Iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
-alias Iptlistfw='sudo /sbin/iptables -L FORWORD -n -v --line-numbers'
+alias Iptl='sudo /sbin/iptables -L -n -v --line-numbers'
+alias Iptli='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
+alias Iptlo='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
+alias Iptlf='sudo /sbin/iptables -L FORWORD -n -v --line-numbers'
 alias Firewall='sudo iptables -L --line-numbers'
 
 #find the files that has been added/modified most recently:
@@ -158,7 +161,9 @@ alias T="tmux"
 alias Ta="tmux attach-session -t "
 alias Tk="tmux kill-session -t "
 #load stored session
-alias Tl="tmuxp load  ~/.tmuxp/pentest01.yml"
+alias Tl="tmuxp load"
+alias Tlpg="tmuxp load /home/kali/Syncthing/920/PenTest/pg/vpn.yml"
+#alias Tl="tmuxp load  ~/.tmuxp/pentest01.yml"
 alias Tlp="tmux list-panes"
 alias Tls="tmux list-session"
 alias Tn="tmux new -s "
