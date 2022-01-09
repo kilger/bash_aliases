@@ -41,7 +41,7 @@ alias Ap="ansible-playbook"
 alias Aptk='wget -O ~/ansible/task_aptk.yml https://raw.githubusercontent.com/kilger/kali_setup/main/task_apt.yml && Ap ~/ansible/task_aptk.yml'
 #ansible apt update for ubuntu
 alias Aptu='wget -O ~/ansible/task_aptu.yml https://raw.githubusercontent.com/kilger/ubuntu_setup/main/task_apt.yml && Ap ~/ansible/task_aptu.yml'
-
+alias Aptopt='wget -O ~/ansible/task_opt.yml https://raw.githubusercontent.com/kilger/kali_setup/main/task_opt.yml 
 
 # Lock the screen (when going AFK)
 alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
