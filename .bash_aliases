@@ -69,6 +69,7 @@ alias Di="docker images"
 alias Dl="docker login"
 alias Dps="docker ps"
 alias Ds="docker start"
+alias Dt="docker run hello-world"
 alias Dv="docker --version"
 
 #exploitdb copy 
@@ -92,7 +93,6 @@ alias H=history
 alias laa="ls -la"
 alias lll="ls -all | less"
 alias lt="ls --tree"
-
 
 #IP
 alias IP="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -128,9 +128,10 @@ alias Thm='sudo openvpn ~/addusername.ovpn'
 #powershell
 alias powershell=pwsh
 
+# Rbc pathtofile/<file>   remove blank commented
 alias Rb="sed '/^#\|^$\| *#/d'" 
 alias Rbc="sed '/^#\|^$\| *#/d'" 
-# Rbc pathtofile/<file>   remove blank commented
+
 
 #nmap search scripts
 alias Nss="ls /usr/share/nmap/scripts/* | grep"
@@ -208,10 +209,13 @@ alias wget="wget -c"
 export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
 alias curl="curl -A '$AGENT'"
 alias wget="wget -U '$AGENT'"
-alias nmap="sudo grc nmap --script-args=\'http.useragent='$AGENT' \'"
+#alias nmap="sudo grc nmap --script-args=\'http.useragent='$AGENT' \'"
+alias nmap="sudo grc nmap"
 
 #vpn
 alias fsvpn="openvpn --script-security 2 --down vpn-down.sh --config "
+
+alias sudo="sudo env \"PATH=$PATH\""
 
 # file tree of current directory
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
