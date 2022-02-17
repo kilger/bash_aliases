@@ -105,6 +105,8 @@ alias Iptlo='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
 alias Iptlf='sudo /sbin/iptables -L FORWORD -n -v --line-numbers'
 alias Firewall='sudo iptables -L --line-numbers'
 
+alias kali=$(ip addr | awk '/inet/ && /tun0/{sub(/\/.*$/,"",$2); print $2}')
+
 #find the files that has been added/modified most recently:
 alias lt="ls -alrt"
 
