@@ -131,7 +131,7 @@ alias Thm='sudo openvpn ~/addusername.ovpn'
 alias powershell=pwsh
 
 # Rbc pathtofile/<file>   remove blank commented
-alias Rb="sed '/^#\|^$\| *#/d'" 
+alias Rb="sed '/^$/d'" 
 alias Rbc="sed '/^#\|^$\| *#/d'" 
 
 
