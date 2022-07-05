@@ -27,8 +27,8 @@ alias nsg='netstat -natp | grep -i $1 '
 alias Sai="sudo apt install -y"
 
 # become root #
-alias root='sudo -i'
-alias su='sudo -i'
+#alias root='sudo -i'
+#alias su='sudo -i'
 #sudo !! -rerun last command with sudo priv
 alias F='sudo $(history -p !!)'
 
