@@ -18,9 +18,17 @@ alias UR="Ualias && Ralias"
 alias Newt="Ap /home/user/Syncthing/920/PenTest/Ansible/tmuxp_template.yml"
 alias Newtarget=Newt
 
-alias psg='ps -ef | grep -i $1 '
+# navigation
+alias Gopen="cd ~/Syncthing/920/PenTest/"
+alias Gopw="cd ~/Syncthing/920/PenTest/pwk"
+alias Gopwk="cd ~/Syncthing/920/PenTest/pwk"
+alias Gos="cd ~/Syncthing/920/PenTest/Scripts"
+alias Got="cd ~/Syncthing/920/PenTest/Tools"
+
+
+alias Psg='ps -ef | grep -i $1 '
 #$ psg 384
-alias nsg='netstat -natp | grep -i $1 '
+alias Nsg='netstat -natp | grep -i $1 '
 #$ nsg 3389
 
 #apt install, just add package ie $sai ufw
