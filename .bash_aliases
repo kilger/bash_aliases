@@ -60,6 +60,8 @@ alias Afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias C="sed '/^#\|^$\| *#/d'" 
 #$ C pathtofile/<file>   cat like but remove blank commented lines
 
+alias Cme='sudo crackmapexec'
+
 #docker
 alias testdocker="docker run hello-world"
 alias Td="docker run hello-world"
