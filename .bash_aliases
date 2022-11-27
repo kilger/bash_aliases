@@ -79,11 +79,13 @@ alias pwncat="docker build -t pwncat ."
 #docker pull resilio/sync
 alias Sync="docker run -d --name Sync -p 127.0.0.1:$WEBUI_PORT:8888 -p 55555 -v $DATA_FOLDER:/mnt/sync --restart on-failure resilio/sync"
 alias Di="docker images"
+alias Dk="docker kill"
 alias Dl="docker login"
 alias Dps="docker ps"
 alias Ds="docker start"
 alias Dt="docker run hello-world"
 alias Dv="docker --version"
+
 
 #exploitdb copy 
 alias Ecp="cp /usr/share/exploitdb/exploits/"
