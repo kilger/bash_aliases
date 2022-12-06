@@ -160,6 +160,12 @@ alias vansible4="source ansible4.0/bin/activate"
 #alias vansible="cd ~/python-venv && source ansible4.0/bin/activate && cd ~/ansible"
 alias vansible="cd ~/python_virtualenv/vansible/vansible4.0/ && source bin/activate && cd ~/ansible"
 
+alias Python2="virtualenv python2-venv -p $(which python2)" && "source python2-venv/bin/activate"
+alias P2a="virtualenv python2-venv -p $(which python2)" 
+alias P2b="source python2-venv/bin/activate"
+alias Python2=P2a&&P2b
+
+
 alias Status="sudo systemctl status -l"
 alias Restart="sudo shutdown -r now"
 
