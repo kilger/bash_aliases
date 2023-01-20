@@ -186,7 +186,7 @@ alias Rsync="rsync --progress -ravz"
 # tmux setup for targets
 alias Newt="Ap /home/user/Syncthing/920/PenTest/Ansible/tmuxp_template.yml"
 alias Newtarget=Newt
-alias Netn="Ap /home/user/Syncthing/920/PenTest/Ansible/tmuxp_template_thm.yml"
+alias Newtn="Ap /home/user/Syncthing/920/PenTest/Ansible/tmuxp_template_thm.yml"
 
 # tmux
 alias Rtmux="tmux source-file ~/.tmux.conf"
@@ -242,8 +242,9 @@ alias wget="wget -c"
 export AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
 alias curl="curl -A '$AGENT'"
 alias wget="wget -U '$AGENT'"
-#alias nmap="sudo grc nmap --script-args=\'http.useragent='$AGENT' \'"
+alias nmapa="sudo grc nmap --script-args=\'http.useragent='$AGENT' \'"
 alias nmap="sudo grc nmap"
+#alias Nmap="n skip alias loading"
 
 #vpn
 alias fsvpn="openvpn --script-security 2 --down vpn-down.sh --config "
