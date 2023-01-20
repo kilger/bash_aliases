@@ -1,6 +1,8 @@
 #reload bashrc after changes
 #source ~/.bashrc or Ralias
 
+alias Ba="echo 2023_1_20"
+
 ## ---Must be in  ~/.bashrc ---
 #if [ -f ~/.bash_aliases ]; then
 #. ~/.bash_aliases
