@@ -15,13 +15,10 @@ alias Ralias="source ~/.bashrc"
 
 alias UR="Ualias && Ralias"
 
-alias Newt="Ap /home/user/Syncthing/920/PenTest/Ansible/tmuxp_template.yml"
-alias Newtarget=Newt
-
 # navigation
-alias Gopen="cd ~/Syncthing/920/PenTest/"
-alias Gopw="cd ~/Syncthing/920/PenTest/pwk"
-alias Gopwk="cd ~/Syncthing/920/PenTest/pwk"
+alias Gop="cd ~/Syncthing/920/PenTest/"
+alias Goh="cd ~/Syncthing/920/PenTest/htb"
+alias Got="cd ~/Syncthing/920/PenTest/thm"
 alias Gos="cd ~/Syncthing/920/PenTest/Scripts"
 alias Got="cd ~/Syncthing/920/PenTest/Tools"
 
@@ -61,6 +58,7 @@ alias C="sed '/^#\|^$\| *#/d'"
 #$ C pathtofile/<file>   cat like but remove blank commented lines
 
 alias Cme='sudo crackmapexec'
+alias Msf='sudo msfconsole'
 
 #docker
 alias testdocker="docker run hello-world"
@@ -93,6 +91,7 @@ alias Ecp="cp /usr/share/exploitdb/exploits/"
 #firewall
 alias firewallsave="sudo iptables-save >" 
 alias firewallrestore="sudo iptables-restore <"
+alias Fr="sudo iptables-restore <"
 
 
 #github
@@ -132,6 +131,7 @@ alias Nc='sudo lsof -l -i +L -R -V'
 alias Ne='sudo lsof -l -i +L -R -V | grep ESTABLISHED'
 alias Nex='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
 
+# nano shortcuts
 alias N=nano
 alias Nl="nano --linenumbers"
 
@@ -145,6 +145,7 @@ alias Thm='sudo openvpn ~/addusername.ovpn'
 #powershell
 alias powershell=pwsh
 
+# read files removing blank lines and commented out lines
 # Rbc pathtofile/<file>   remove blank commented
 alias Rb="sed '/^$/d'" 
 alias Rbc="sed '/^#\|^$\| *#/d'" 
@@ -177,6 +178,13 @@ alias Rsync="rsync --progress -ravz"
 
 #alias ssh='_ssh_sesslog'
 #getting errors
+
+
+
+# tmux setup for targets
+alias Newt="Ap /home/user/Syncthing/920/PenTest/Ansible/tmuxp_template.yml"
+alias Newtarget=Newt
+alias Netn="Ap /home/user/Syncthing/920/PenTest/Ansible/tmuxp_template_thm.yml"
 
 # tmux
 alias Rtmux="tmux source-file ~/.tmux.conf"
