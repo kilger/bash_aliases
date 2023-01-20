@@ -61,7 +61,8 @@ alias C="sed '/^#\|^$\| *#/d'"
 
 alias Cme='sudo crackmapexec'
 alias Msf='sudo msfconsole'
-alias Msfs="cp '/home/user/Syncthing/920/PenTest/Scripts/msfconsole_setg.rc' ./msfconsole_setg.rc && sed -i 's/TARGET/'$IP'/g' msfconsole_setg.rc && sed -i 's/TUN0/'$PI'/g' msfconsole_setg.rc && sudo msfconsole -r msfconsole_setg.rc"
+alias Msfs="cp /home/user/Syncthing/920/PenTest/Scripts/msfconsole_setg.rc ./msfconsole_setg.rc && ./setup_thm.sh"
+#alias Msfs="cp '/home/user/Syncthing/920/PenTest/Scripts/msfconsole_setg.rc' ./msfconsole_setg.rc && sed -i 's/TARGET/'$IP'/g' msfconsole_setg.rc && sed -i 's/TUN0/'$PI'/g' msfconsole_setg.rc && sudo msfconsole -r msfconsole_setg.rc"
 
 #docker
 alias testdocker="docker run hello-world"
