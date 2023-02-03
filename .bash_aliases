@@ -279,6 +279,15 @@ alias Vps="sudo apt update \
 && cd ~/ansible" 
 
 #Functions:
+# Netcat Reverse Shell
+Rv() {
+    PORT=$1
+    echo "Starting Netcat Listener on $PORT"
+    echo "# python -c "import pty;pty.spawn(\"/bin/bash\")""
+    echo "# python3 -c "import pty;pty.spawn(\"/bin/bash\")""
+    rlwrap -cAr nc -lvnp "$PORT"
+}
+
 #shown the contents of a directory immediately after moving to it by cd DIRECTORY
 cdl()    {
   cd"$@";
