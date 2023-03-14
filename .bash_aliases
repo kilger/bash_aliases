@@ -191,8 +191,8 @@ alias Rsync="rsync --progress -ravz"
 alias Newt="Ap $HOME/Syncthing/920/PenTest/Ansible/tmuxp_template.yml"
 #alias Newt="Ap /home/user/Syncthing/920/PenTest/Ansible/tmuxp_template.yml"
 alias Newtarget=Newt
-alias Newtn="Ap /home/user/Syncthing/920/PenTest/Ansible/tmuxp_template_thm.yml"
-
+#alias Newtn="Ap /home/user/Syncthing/920/PenTest/Ansible/tmuxp_template_thm.yml"
+alias Newtn="Ap /home/user/Syncthing/920/PenTest/Ansible/Tmux/by_name/tmuxp_template_named.yml"
 
 
 # tmux
