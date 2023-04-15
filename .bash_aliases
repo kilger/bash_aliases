@@ -133,6 +133,8 @@ alias lt="ls -alrt"
 #Test internet speed
 alias Netspeed="curl -L https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -o fast && wget https://github.com/ddo/fast/releases/download/v0.0.4/fast_linux_amd64 -O fast"
 
+alias Ms="sudo systemctl start postgresql.service && sudo msfdb init && /home/user/Syncthing/920/PenTest/Scripts/Metasploit/variables.sh"
+
 alias Nc='sudo lsof -l -i +L -R -V'
 alias Ne='sudo lsof -l -i +L -R -V | grep ESTABLISHED'
 alias Nex='curl -s http://checkip.dyndns.org/ | sed "s/[a-zA-Z<>/ :]//g"'
