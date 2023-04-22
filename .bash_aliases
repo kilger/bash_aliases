@@ -24,6 +24,10 @@ alias Got="cd ~/Syncthing/920/PenTest/thm"
 alias Gos="cd ~/Syncthing/920/PenTest/Scripts"
 alias Got="cd ~/Syncthing/920/PenTest/Tools"
 
+# remove first word from last command ie echo .... echo would be removed for tmux
+alias Lr='eval "$(history -p \!\! | cut -d " " -f2-)"; history -d $(($HISTCMD-1))'
+
+
 
 alias Psg='ps -ef | grep -i $1 '
 #$ psg 384
