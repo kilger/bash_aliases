@@ -349,6 +349,8 @@ function smbservehere() {
     #sudo iptables -I INPUT 1 -p tcp --dport 445 -j ACCEPT
 }
 
+alias Snginxhere="docker stop $(docker ps -a -q -f ancestor=rflathers/nginxserve)"
+alias Kn="docker stop $(docker ps -a -q -f ancestor=rflathers/nginxserve)"
 #Serving HTTP Files w nginx can browse the contents with a browser, or use curl/wget/invoke-webrequest:  \\IP
 # $ nginxhere in folder to share
 function nginxhere() {
