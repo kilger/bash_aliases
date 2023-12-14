@@ -155,12 +155,18 @@ alias Thm='sudo openvpn ~/addusername.ovpn'
 # openvpn --script-security 2 --down vpn-down.sh --config
 
 #powershell
-alias powershell=pwsh
+alias powershell=Ps
 
 # read files removing blank lines and commented out lines
 # Rbc pathtofile/<file>   remove blank commented
 alias Rb="sed '/^$/d'" 
 alias Rbc="sed '/^#\|^$\| *#/d'" 
+
+
+#port status+
+alias P="lsof -i -P -n"
+alias Pe="lsof -i -P -n | grep ESTABLISHED"  
+alias Pl="lsof -i -P -n | grep LISTEN"
 
 
 #nmap search scripts
