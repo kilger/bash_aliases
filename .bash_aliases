@@ -118,6 +118,10 @@ alias laa="ls -la"
 alias lll="ls -all | less"
 alias lt="ls --tree"
 
+#python2 http on port 80 -can see uploads
+alias Hp2="python2 -m SimpleHTTPServer 80"
+
+
 #IP
 alias IP="dig +short myip.opendns.com @resolver1.opendns.com"
 alias Ip='ip -s link show && echo IPv4 && ip -4 a s && echo IPv6 && ip -6 a s && echo "External IPv4" && IP'
