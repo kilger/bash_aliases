@@ -1,7 +1,7 @@
 #reload bashrc after changes
 #source ~/.bashrc or Ralias
 
-alias Ba="echo 2024_2_07"
+alias Ba="echo 2024_2_19"
 
 ## ---Must be in  ~/.bashrc ---
 #if [ -f ~/.bash_aliases ]; then
@@ -16,6 +16,10 @@ alias Ualias="wget -O ~/.bash_aliases https://raw.githubusercontent.com/kilger/b
 alias Ralias="source ~/.bashrc"
 
 alias UR="Ualias && Ralias"
+
+#test
+alias X="xclip -sel c < cat "
+
 
 # navigation
 alias Gop="cd ~/Syncthing/920/PenTest/"
