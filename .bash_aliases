@@ -18,7 +18,7 @@ alias Ralias="source ~/.bashrc"
 alias UR="Ualias && Ralias"
 
 #test
-alias X="xclip -sel c < cat "
+alias X="xclip -sel c < "
 
 
 # navigation
